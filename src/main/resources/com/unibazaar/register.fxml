@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox alignment="CENTER" spacing="20" styleClass="auth-root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unibazaar.controllers.RegisterController">
+    <padding><Insets bottom="40" left="40" right="40" top="40" /></padding>
+    
+    <VBox alignment="CENTER" spacing="10" styleClass="auth-box">
+        <padding><Insets bottom="30" left="40" right="40" top="30" /></padding>
+        <Label styleClass="app-title" text="UniBazaar" />
+        <Label styleClass="auth-subtitle" text="Create a new account" />
+        
+        <Label fx:id="statusLabel" styleClass="status-label" />
+        
+        <VBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="Full Name" styleClass="auth-label"/>
+            <TextField fx:id="nameField" promptText="Enter your full name" prefWidth="300" styleClass="auth-field"/>
+        </VBox>
+
+        <VBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="Email Address (.edu.tr for Students)" styleClass="auth-label"/>
+            <TextField fx:id="emailField" promptText="Enter your email" prefWidth="300" styleClass="auth-field"/>
+        </VBox>
+
+        <VBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="Password" styleClass="auth-label"/>
+            <PasswordField fx:id="passwordField" promptText="Create a password" prefWidth="300" styleClass="auth-field"/>
+        </VBox>
+
+        <VBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="Confirm Password" styleClass="auth-label"/>
+            <PasswordField fx:id="confirmPasswordField" promptText="Confirm your password" prefWidth="300" styleClass="auth-field"/>
+        </VBox>
+
+        <VBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="Account Type" styleClass="auth-label"/>
+            <HBox spacing="10">
+                <Button fx:id="studentRoleBtn" text="Student" onAction="#onStudentRoleClicked" styleClass="category-chip, category-chip-active" prefWidth="145"/>
+                <Button fx:id="sellerRoleBtn" text="Seller" onAction="#onSellerRoleClicked" styleClass="category-chip" prefWidth="145"/>
+            </HBox>
+        </VBox>
+
+        <Button fx:id="registerButton" text="Register" onAction="#onRegisterClicked" prefWidth="300" styleClass="auth-button"/>
+        
+        <HBox alignment="CENTER" spacing="5">
+            <Label text="Do you have an account?" styleClass="auth-text"/>
+            <Hyperlink text="Sign in" onAction="#onLoginLinkClicked" styleClass="auth-link"/>
+        </HBox>
+    </VBox>
+</VBox>

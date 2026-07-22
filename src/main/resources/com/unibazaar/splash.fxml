@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox alignment="CENTER" spacing="0" styleClass="splash-root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unibazaar.controllers.SplashController">
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <VBox alignment="CENTER" spacing="12" translateY="-40">
+        <Label text="📖" styleClass="splash-icon"/>
+        <Label text="UniBazaar" styleClass="splash-title"/>
+        <Label text="Exclusive Shopping for University Students" styleClass="splash-subtitle"/>
+    </VBox>
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <VBox alignment="CENTER" spacing="8" styleClass="splash-bottom">
+        <padding><Insets bottom="40" left="40" right="40" top="0"/></padding>
+        <Label fx:id="welcomeBackLabel" styleClass="splash-welcome" visible="false" managed="false"/>
+        <HBox fx:id="signInBox" alignment="CENTER" spacing="4">
+            <Label text="Do you have an account?" styleClass="splash-text"/>
+            <Hyperlink text="Sign in" onAction="#onSignInClicked" styleClass="splash-link"/>
+        </HBox>
+    </VBox>
+
+</VBox>

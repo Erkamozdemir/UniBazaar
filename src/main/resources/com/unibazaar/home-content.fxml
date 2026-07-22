@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="16" xmlns="http://javafx.com/javafx/21">
+    <padding><Insets top="0" right="0" bottom="0" left="0"/></padding>
+
+    <Label fx:id="statusLabel" styleClass="status-label"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="filter-bar">
+        <TextField fx:id="searchField" promptText="Search listings..." prefWidth="200" styleClass="search-field"/>
+        <ComboBox fx:id="categoryComboBox" promptText="Category" prefWidth="150" styleClass="filter-combo"/>
+        <TextField fx:id="brandField" promptText="Brand" prefWidth="120" styleClass="search-field"/>
+        <TextField fx:id="minPriceField" promptText="Min ₺" prefWidth="80" styleClass="search-field"/>
+        <TextField fx:id="maxPriceField" promptText="Max ₺" prefWidth="80" styleClass="search-field"/>
+        <Button text="Filter" onAction="#onFilterClicked" styleClass="filter-button"/>
+    </HBox>
+
+    <ScrollPane fitToWidth="true" styleClass="scroll-pane" VBox.vgrow="ALWAYS">
+        <FlowPane fx:id="listingsGrid" alignment="TOP_LEFT" hgap="16" vgap="16">
+            <padding><Insets top="4" right="4" bottom="4" left="4"/></padding>
+        </FlowPane>
+    </ScrollPane>
+</VBox>

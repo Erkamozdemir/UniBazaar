@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane styleClass="dashboard-root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unibazaar.controllers.DashboardController">
+    
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="dashboard-header">
+            <padding><Insets bottom="20" left="32" right="32" top="20" /></padding>
+            <VBox>
+                <Label styleClass="app-title" text="UniBazaar" />
+                <Label fx:id="userInfoLabel" styleClass="app-subtitle" text="Welcome" />
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="My Chats" styleClass="auth-button" onAction="#onMyChatsClicked" />
+            <MenuButton text="Settings" styleClass="auth-button">
+                <items>
+                    <MenuItem text="Verify GPA (Upload Transcript)" onAction="#onVerifyGpa" />
+                    <MenuItem text="Log Out" onAction="#onLogOut" />
+                    <MenuItem text="Close Account" onAction="#onCloseAccount" />
+                </items>
+            </MenuButton>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+            <VBox spacing="20">
+                <padding><Insets bottom="32" left="32" right="32" top="32" /></padding>
+                
+                <VBox fx:id="interactionsSection" spacing="10">
+                    <Label text="Recent Interactions" styleClass="section-title" />
+                    <ScrollPane vbarPolicy="NEVER" hbarPolicy="AS_NEEDED" fitToHeight="true" styleClass="scroll-pane" style="-fx-background-color: transparent;">
+                        <HBox fx:id="interactionsBox" spacing="16" />
+                    </ScrollPane>
+                </VBox>
+
+                <Label text="Discover" styleClass="section-title" />
+                <TextField fx:id="searchField" promptText="Search products by keywords..." styleClass="main-search" onAction="#onSearchAction"/>
+                
+                <ScrollPane vbarPolicy="NEVER" hbarPolicy="AS_NEEDED" fitToHeight="true" styleClass="scroll-pane" style="-fx-background-color: transparent;">
+                    <HBox fx:id="categoryChipsBox" spacing="10" styleClass="category-chips" />
+                </ScrollPane>
+                
+                <Label fx:id="statusLabel" styleClass="status-label"/>
+                <FlowPane fx:id="listingsGrid" hgap="16" vgap="16" styleClass="listings-grid"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

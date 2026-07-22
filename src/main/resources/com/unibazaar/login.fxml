@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox alignment="CENTER" spacing="20" styleClass="auth-root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unibazaar.controllers.LoginController">
+    <padding><Insets bottom="40" left="40" right="40" top="40" /></padding>
+    
+    <VBox alignment="CENTER" spacing="10" styleClass="auth-box">
+        <padding><Insets bottom="30" left="40" right="40" top="30" /></padding>
+        <Label styleClass="app-title" text="UniBazaar" />
+        <Label styleClass="auth-subtitle" text="Login to your account" />
+        
+        <Label fx:id="statusLabel" styleClass="status-label" />
+        
+        <VBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="Email Address" styleClass="auth-label"/>
+            <TextField fx:id="emailField" promptText="Enter your email" prefWidth="300" styleClass="auth-field"/>
+        </VBox>
+
+        <VBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="Password" styleClass="auth-label"/>
+            <PasswordField fx:id="passwordField" promptText="Enter your password" prefWidth="300" styleClass="auth-field"/>
+        </VBox>
+
+        <Button fx:id="loginButton" text="Login" onAction="#onLoginClicked" prefWidth="300" styleClass="auth-button"/>
+        
+        <HBox alignment="CENTER" spacing="5">
+            <Label text="Do you want to open an account?" styleClass="auth-text"/>
+            <Hyperlink text="Sign up" onAction="#onRegisterLinkClicked" styleClass="auth-link"/>
+        </HBox>
+    </VBox>
+</VBox>
