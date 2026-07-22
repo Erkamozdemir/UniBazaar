@@ -1,0 +1,20 @@
+package com.unibazaar.dtos;
+import java.math.BigDecimal;
+public record ListingDetailDTO(
+    int id,
+    String sellerId,
+    String sellerName,
+    String title,
+    String description,
+    BigDecimal originalPrice,
+    boolean isCampaignActive,
+    String imageUrl,
+    String courseCode,
+    String categoryName,
+    String brand,
+    Integer categoryId,
+    String condition,
+    String location,
+    String status,
+    String targetUniversity
+) {}
